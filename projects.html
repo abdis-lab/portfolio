@@ -3,111 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abdisalam Kadir | Portfolio</title>
+  <title>Projects | Abdisalam Kadir</title>
+  <meta name="description" content="Projects by Abdisalam Kadir — Java, Spring Boot, Tailwind." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] }}}}
+  </script>
 </head>
 <body class="min-h-screen bg-gray-50 text-gray-900">
   <!-- Navbar -->
   <header class="bg-white/90 backdrop-blur sticky top-0 z-50 shadow-sm">
-    <nav class="container mx-auto flex items-center justify-between px-4 py-3">
+    <nav class="container mx-auto flex items-center justify-between px-4 py-4 md:py-5">
       <a href="index.html" class="text-xl font-bold">Abdisalam Kadir</a>
-      <ul id="nav" class="flex gap-6 text-sm">
+      <ul id="nav" class="flex items-center gap-6 text-sm">
         <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
         <li><a href="about.html" class="hover:text-blue-600">About</a></li>
         <li><a href="projects.html" class="hover:text-blue-600">Projects</a></li>
         <li><a href="contact.html" class="hover:text-blue-600">Contact</a></li>
+        <li>
+          <button id="themeToggle" class="text-sm px-3 py-1 rounded border hover:bg-gray-100">
+            <span class="light">🌙</span><span class="dark hidden">☀️</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
 
-  <!-- Page content goes here -->
-  <main class="container mx-auto px-4 py-16">
-    <header class="mb-10">
-      <h2 class="text-3xl font-bold">Projects</h2>
-      <p class="mt-3 text-gray-700">A few things I’ve built. Clean, simple, and shipped.</p>
+  <!-- Main -->
+  <main class="container mx-auto px-4 py-20">
+    <header class="mb-8">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Projects</h1>
+      <p class="mt-3 text-gray-700 max-w-prose">A few builds I’m proud of. Clean, practical, and shipped.</p>
     </header>
-  
-    <!-- Filters (optional, non-functional for now) -->
-    <div class="flex flex-wrap items-center gap-3 mb-8">
-      <button class="px-4 py-2 rounded-full border text-sm hover:bg-gray-100">All</button>
-      <button class="px-4 py-2 rounded-full border text-sm hover:bg-gray-100">Java</button>
-      <button class="px-4 py-2 rounded-full border text-sm hover:bg-gray-100">Web</button>
+
+    <!-- Filters -->
+    <div class="flex flex-wrap items-center gap-2 mb-8" id="filters" role="tablist" aria-label="Project filters">
+      <button data-filter="all" class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-sm hover:bg-gray-100" role="tab" aria-selected="true">All</button>
+      <button data-filter="java" class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-sm hover:bg-gray-100" role="tab" aria-selected="false">Java</button>
+      <button data-filter="web" class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-sm hover:bg-gray-100" role="tab" aria-selected="false">Web</button>
     </div>
-  
-    <!-- Project grid -->
-    <section class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Grid -->
+    <section id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
       <!-- Card 1 -->
-      <article class="bg-white rounded-2xl shadow p-5 flex flex-col">
-        <img src="assets/images/ef-league-cover.jpg" alt="E&F League" class="rounded-xl object-cover h-40 w-full">
-        <h3 class="mt-4 text-lg font-semibold">E&F League</h3>
-        <p class="mt-2 text-gray-700 text-sm">
-          Community basketball league platform. Admin approvals, team management, weekly matchups.
-        </p>
-        <ul class="mt-3 text-xs text-gray-600 flex flex-wrap gap-2">
-          <li class="px-2 py-1 bg-gray-100 rounded">Java</li>
-          <li class="px-2 py-1 bg-gray-100 rounded">Spring Boot</li>
-          <li class="px-2 py-1 bg-gray-100 rounded">Thymeleaf</li>
-          <li class="px-2 py-1 bg-gray-100 rounded">Tailwind</li>
-        </ul>
-        <div class="mt-4 flex gap-3">
-          <a href="#" class="text-blue-600 text-sm hover:underline">Live</a>
-          <a href="#" class="text-blue-600 text-sm hover:underline">Code</a>
-      </div>
-      </article>
-  
-      <!-- Card 2 -->
-      <article class="bg-white rounded-2xl shadow p-5 flex flex-col">
-        <img src="assets/images/nearby-hoopsession.jpg" alt="Nearby Hoopsession" class="rounded-xl object-cover h-40 w-full">
-        <h3 class="mt-4 text-lg font-semibold">Nearby Hoopsession</h3>
-        <p class="mt-2 text-gray-700 text-sm">
-          Find local hoops to join. Simple search + clean UI.
-        </p>
-        <ul class="mt-3 text-xs text-gray-600 flex flex-wrap gap-2">
-          <li class="px-2 py-1 bg-gray-100 rounded">Java</li>
-          <li class="px-2 py-1 bg-gray-100 rounded">Spring Boot</li>
-          <li class="px-2 py-1 bg-gray-100 rounded">Tailwind</li>
-        </ul>
-        <div class="mt-4 flex gap-3">
-          <a href="#" class="text-blue-600 text-sm hover:underline">Live</a>
-          <a href="#" class="text-blue-600 text-sm hover:underline">Code</a>
+      <article class="card group grid grid-rows-[auto,1fr] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-transform hover:-translate-y-1 focus-within:-translate-y-1" data-tags="java web">
+        <!-- Cover -->
+        <a href="#" class="block relative aspect-[16/10] bg-gray-100 overflow-hidden" aria-label="E&F League live demo">
+          <img src="assets/images/ef-league-cover.jpg" alt="E&F League project cover" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+          <span class="absolute left-3 top-3 px-2 py-1 text-[11px] rounded-full bg-black/70 text-white tracking-wide">Featured</span>
+        </a>
+        <!-- Body -->
+        <div class="p-6 flex flex-col gap-4">
+          <header class="flex items-start justify-between gap-3">
+            <h2 class="text-lg font-semibold text-gray-900 leading-snug">E&F League</h2>
+            <span class="shrink-0 text-xs px-2 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">Java</span>
+          </header>
+          <p class="text-sm text-gray-700 leading-relaxed">Community basketball league platform with admin approvals, team management, and weekly scheduling.</p>
+          <ul class="flex flex-wrap gap-2">
+            <li class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 text-xs">Spring Boot</li>
+            <li class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 text-xs">MySQL</li>
+            <li class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 text-xs">Tailwind</li>
+            <li class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 text-xs">Docker</li>
+          </ul>
+          <hr class="border-gray-100">
+          <div class="mt-auto flex items-center justify-between">
+            <div class="text-xs text-gray-500">Role: <span class="text-gray-700 font-medium">Solo Dev</span> · 2025</div>
+            <div class="flex items-center gap-3">
+              <a href="#" class="text-sm font-medium text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300 rounded">Live</a>
+              <a href="#" class="text-sm font-medium text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300 rounded">Code</a>
+            </div>
+          </div>
         </div>
       </article>
-  
+
+      <!-- Card 2 -->
+      <article class="card group grid grid-rows-[auto,1fr] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-transform hover:-translate-y-1 focus-within:-translate-y-1" data-tags="java web">
+        <a href="#" class="block relative aspect-[16/10] bg-gray-100 overflow-hidden" aria-label="Nearby Hoopsession live demo">
+          <img src="assets/images/nearby-hoopsession.jpg" alt="Nearby Hoopsession project cover" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+        </a>
+        <div class="p-6 flex flex-col gap-4">
+          <header class="flex items-start justify-between gap-3">
+            <h2 class="text-lg font-semibold text-gray-900 leading-snug">Nearby Hoopsession</h2>
+            <span class="shrink-0 text-xs px-2 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">Java</span>
+          </header>
+          <p class="text-sm text-gray-700 leading-relaxed">Find local hoops to join. Simple search, clean UI, fast loading.</p>
+          <ul class="flex flex-wrap gap-2">
+            <li class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 text-xs">Spring Boot</li>
+            <li class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 text-xs">Tailwind</li>
+            <li class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 text-xs">REST API</li>
+          </ul>
+          <hr class="border-gray-100">
+          <div class="mt-auto flex items-center justify-between">
+            <div class="text-xs text-gray-500">Role: <span class="text-gray-700 font-medium">Solo Dev</span> · 2025</div>
+            <div class="flex items-center gap-3">
+              <a href="#" class="text-sm font-medium text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300 rounded">Live</a>
+              <a href="#" class="text-sm font-medium text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300 rounded">Code</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
       <!-- Card 3 -->
-      <article class="bg-white rounded-2xl shadow p-5 flex flex-col">
-        <img src="assets/images/todo-app.jpg" alt="Todo App" class="rounded-xl object-cover h-40 w-full">
-        <h3 class="mt-4 text-lg font-semibold">Todo App</h3>
-        <p class="mt-2 text-gray-700 text-sm">
-          Minimalist task manager focused on speed and clarity.
-        </p>
-        <ul class="mt-3 text-xs text-gray-600 flex flex-wrap gap-2">
-          <li class="px-2 py-1 bg-gray-100 rounded">JavaScript</li>
-          <li class="px-2 py-1 bg-gray-100 rounded">HTML</li>
-          <li class="px-2 py-1 bg-gray-100 rounded">CSS</li>
-        </ul>
-        <div class="mt-4 flex gap-3">
-          <a href="#" class="text-blue-600 text-sm hover:underline">Live</a>
-          <a href="#" class="text-blue-600 text-sm hover:underline">Code</a>
+      <article class="card group grid grid-rows-[auto,1fr] bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-transform hover:-translate-y-1 focus-within:-translate-y-1" data-tags="web">
+        <a href="#" class="block relative aspect-[16/10] bg-gray-100 overflow-hidden" aria-label="Todo App live demo">
+          <img src="assets/images/todo-app.jpg" alt="Todo App project cover" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+        </a>
+        <div class="p-6 flex flex-col gap-4">
+          <header class="flex items-start justify-between gap-3">
+            <h2 class="text-lg font-semibold text-gray-900 leading-snug">Todo App</h2>
+            <span class="shrink-0 text-xs px-2 py-1 rounded-full bg-gray-50 text-gray-700 border border-gray-200">Web</span>
+          </header>
+          <p class="text-sm text-gray-700 leading-relaxed">Minimalist task manager with zero‑friction UI and keyboard shortcuts.</p>
+          <ul class="flex flex-wrap gap-2">
+            <li class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 text-xs">JavaScript</li>
+            <li class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 text-xs">HTML</li>
+            <li class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 text-xs">CSS</li>
+          </ul>
+          <hr class="border-gray-100">
+          <div class="mt-auto flex items-center justify-between">
+            <div class="text-xs text-gray-500">Role: <span class="text-gray-700 font-medium">Solo Dev</span> · 2024</div>
+            <div class="flex items-center gap-3">
+              <a href="#" class="text-sm font-medium text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300 rounded">Live</a>
+              <a href="#" class="text-sm font-medium text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300 rounded">Code</a>
+            </div>
+          </div>
         </div>
       </article>
     </section>
+
+    <!-- Empty state -->
+    <p id="emptyState" class="hidden mt-10 text-center text-gray-600">No projects match that filter (yet).</p>
   </main>
-  
 
-  <!-- Footer -->
-  <footer class="mt-16 border-t bg-white">
-    <div class="container mx-auto px-4 py-6 text-center text-sm text-gray-600">
-      © 2025 Abdisalam Kadir • Seattle, WA
-    </div>
-  </footer>
-
+  <!-- Page‑specific script: filters -->
   <script>
-    // highlight active nav link
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+    const empty = document.getElementById('emptyState');
+
+    function applyFilter(tag) {
+      let visible = 0;
+      cards.forEach(c => {
+        const tags = (c.dataset.tags || '').split(' ').filter(Boolean);
+        const show = (tag === 'all') || tags.includes(tag);
+        c.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+      // button active styling + aria
+      filterBtns.forEach(b => { b.classList.remove('bg-gray-900','text-white'); b.setAttribute('aria-selected','false'); });
+      const active = document.querySelector(`[data-filter="${tag}"]`);
+      if (active) { active.classList.add('bg-gray-900','text-white'); active.setAttribute('aria-selected','true'); }
+      // empty state
+      empty.classList.toggle('hidden', visible !== 0);
+    }
+
+    filterBtns.forEach(b => b.addEventListener('click', () => applyFilter(b.dataset.filter)));
+    applyFilter('all'); // default
+  </script>
+
+  <!-- Shared script: theme + active nav -->
+  <script>
+    // Theme persistence
+    const root = document.documentElement;
+    const stored = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+    root.classList.toggle('dark', stored === 'dark');
+    const btn = document.getElementById('themeToggle');
+    if (btn) btn.onclick = () => {
+      const isDark = root.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark':'light');
+      document.querySelector('#themeToggle .light')?.classList.toggle('hidden', isDark);
+      document.querySelector('#themeToggle .dark')?.classList.toggle('hidden', !isDark);
+    };
+    // Active nav link
     const path = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('#nav a').forEach(a => {
-      if (a.getAttribute('href') === path) {
-        a.classList.add('text-blue-600', 'font-semibold');
-      }
+      if (a.getAttribute('href') === path) a.classList.add('text-blue-600','font-semibold');
     });
   </script>
 </body>

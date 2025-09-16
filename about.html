@@ -16,43 +16,75 @@
         <li><a href="about.html" class="hover:text-blue-600">About</a></li>
         <li><a href="projects.html" class="hover:text-blue-600">Projects</a></li>
         <li><a href="contact.html" class="hover:text-blue-600">Contact</a></li>
+        <button id="themeToggle" class="text-sm px-3 py-1 rounded border hover:bg-gray-100 dark:hover:bg-gray-800">
+            <span class="light">🌙</span><span class="dark hidden">☀️</span>
+        </button>
+          
       </ul>
     </nav>
   </header>
 
   <!-- Page content goes here -->
-  <main class="container mx-auto px-4 py-16">
-    <div class="grid md:grid-cols-3 gap-10">
+  <main class="container mx-auto px-4 py-20">
+    <div class="grid md:grid-cols-3 gap-12">
+      <!-- Left: Bio -->
       <section class="md:col-span-2">
-        <h2 class="text-3xl font-bold">About Me</h2>
-        <p class="mt-4 text-gray-700">
-          I’m a Seattle-based software developer focused on Java/Spring Boot and clean, responsive frontends.
-          I like building practical apps that solve real problems.
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">About Me</h2>
+        <p class="mt-6 text-lg text-gray-700 leading-relaxed max-w-prose">
+          I got into coding because I loved the feeling of building something and then actually seeing it
+          live on a website. That moment of <span class="font-semibold text-gray-900">“wow, my code is real”</span>
+          hooked me. Since then, I’ve been chasing that same spark—whether it’s solving a tough bug
+          or polishing a design until it looks just right.
         </p>
-  
-        <h3 class="mt-8 text-xl font-semibold">Skills</h3>
-        <ul class="mt-3 grid sm:grid-cols-2 gap-2 text-gray-700">
-          <li>Java, Spring Boot</li>
-          <li>HTML, CSS, Tailwind</li>
-          <li>MySQL, JPA/Hibernate</li>
-          <li>Docker, AWS EC2</li>
-        </ul>
-  
-        <h3 class="mt-8 text-xl font-semibold">Education & Programs</h3>
-        <ul class="mt-3 list-disc list-inside text-gray-700">
-          <li>AAS-T Software Development — Seattle Central College (in progress)</li>
-          <li>PerScholas x TEKsystems</li>
-          <li>AWS Academy (in progress)</li>
-        </ul>
+        <p class="mt-4 text-lg text-gray-700 leading-relaxed max-w-prose">
+          These days I spend most of my time working with <span class="font-semibold text-gray-900">Java, Spring Boot,
+          and Tailwind</span>, because I like building things that are both practical and clean.
+          My favorite parts of development are <span class="font-semibold text-gray-900">making interfaces look good</span>
+          and <span class="font-semibold text-gray-900">figuring out problems that don’t have an obvious answer</span>.
+        </p>
+        <p class="mt-4 text-lg text-gray-700 leading-relaxed max-w-prose">
+          Outside of coding, you’ll probably find me on a basketball court or planning my next trip.
+          I love exploring new places and picking up fresh ideas to bring back into my projects.
+        </p>
       </section>
   
+      <!-- Right: Skills Card -->
+      <aside class="md:col-span-1 flex justify-center">
+        <div class="bg-white rounded-2xl shadow border border-gray-100 p-6 max-w-xs w-full text-center">
+          <img src="assets/images/profile.jpg" alt="Abdisalam Kadir" 
+               class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-blue-600 shadow-md">
+          <h4 class="mt-4 text-xl font-semibold text-gray-900">Abdisalam Kadir</h4>
+          <p class="mt-2 text-sm text-gray-600">Software Developer • Seattle</p>
+          <div class="mt-6 flex flex-wrap justify-center gap-3">
+            <a href="projects.html" class="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">
+              See Projects
+            </a>
+            <a href="contact.html" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium text-gray-900 hover:bg-gray-100">
+              Contact
+            </a>
+          </div>
+        </div>
+      </aside>
+      
+    </div>
+  </main>
+  
+  
+      <!-- Right: Skills Card -->
       <aside class="md:col-span-1">
-        <div class="p-6 bg-white shadow rounded-2xl">
-          <h4 class="font-semibold">Location</h4>
-          <p class="text-gray-700">Seattle, WA</p>
-          <h4 class="mt-6 font-semibold">Open To</h4>
-          <p class="text-gray-700">Internships • Entry-level SWE roles</p>
-          <a href="projects.html" class="mt-6 inline-block px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700">See Projects</a>
+        <div class="p-6 bg-white rounded-2xl shadow border border-gray-100">
+          <h4 class="text-xl font-semibold text-gray-900">Skills</h4>
+          <ul class="mt-4 grid grid-cols-2 gap-3 text-sm">
+            <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">Java</li>
+            <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">Spring Boot</li>
+            <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">MySQL</li>
+            <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">Docker</li>
+            <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">Tailwind</li>
+            <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">HTML/CSS</li>
+          </ul>
+          <a href="projects.html" class="mt-8 inline-block w-full text-center px-4 py-2.5 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700">
+            See Projects
+          </a>
         </div>
       </aside>
     </div>

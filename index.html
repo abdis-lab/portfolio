@@ -20,35 +20,82 @@
     </nav>
   </header>
 
+  
   <main class="container mx-auto px-4">
-    <!-- Hero -->
-    <section class="flex flex-col items-center text-center py-24">
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Hi, I’m Abdisalam</h1>
-      <p class="mt-4 text-lg md:text-xl text-gray-600">
-        Software Developer • Java • Spring Boot • Web Apps
-      </p>
-      <div class="mt-8 flex gap-3">
-        <a href="projects.html" class="px-5 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700">View Projects</a>
-        <a href="contact.html" class="px-5 py-3 rounded-lg border font-medium hover:bg-gray-100">Contact Me</a>
+    <!-- HERO -->
+    <section class="grid md:grid-cols-2 gap-12 items-center pt-28 pb-20">
+      <div>
+        <!-- High-contrast tag -->
+        <span class="inline-block px-3 py-1 text-xs rounded-full bg-blue-600 text-white">
+          Seattle • Open to Internships
+        </span>
+  
+        <!-- Clear, dark heading for visibility -->
+        <h1 class="mt-6 text-4xl md:text-6xl font-extrabold leading-tight text-gray-900">
+          I build practical, reliable web apps.
+        </h1>
+  
+        <!-- Body copy: darker text + larger size -->
+        <p class="mt-5 text-lg md:text-xl text-gray-700 max-w-prose">
+          I’m <span class="font-semibold text-gray-900">Abdisalam Kadir</span> — a Seattle-based developer focused on
+          <span class="font-semibold text-gray-900">Java & Spring Boot</span> backends and fast, clean UIs with
+          <span class="font-semibold text-gray-900">Tailwind CSS</span>. I ship small features quickly and iterate.
+        </p>
+  
+        <!-- Buttons -->
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="projects.html" class="px-5 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700">
+            See Projects
+          </a>
+          <a href="about.html" class="px-5 py-3 rounded-xl border border-gray-300 text-gray-900 hover:bg-gray-100">
+            About Me
+          </a>
+          <a href="contact.html" class="px-5 py-3 rounded-xl border border-gray-300 text-gray-900 hover:bg-gray-100">
+            Contact
+          </a>
+        </div>
+  
+        <!-- Tech chips: subtle, consistent -->
+        <ul class="mt-8 flex flex-wrap gap-2 text-sm">
+          <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">Java</li>
+          <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">Spring Boot</li>
+          <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">MySQL</li>
+          <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">Docker</li>
+          <li class="px-3 py-1 rounded-full bg-gray-100 text-gray-800">Tailwind</li>
+        </ul>
+      </div>
+  
+      <!-- Preview card: remove low-contrast overlays, keep clean white card -->
+      <div>
+        <div class="bg-white rounded-3xl shadow-lg p-6 border border-gray-100">
+          <img src="assets/images/profile.jpg" alt="Abdisalam" class="w-full h-64 object-cover rounded-2xl">
+          <div class="mt-4 text-sm text-gray-600">
+            Recently shipped <span class="font-medium text-gray-900">E&F League</span>: admin approvals, team management, weekly scheduling.
+          </div>
+        </div>
       </div>
     </section>
   
-    <!-- Quick highlights -->
-    <section class="grid md:grid-cols-3 gap-6">
-      <div class="p-6 rounded-2xl shadow bg-white">
-        <h3 class="font-semibold text-lg">Java & Spring Boot</h3>
-        <p class="mt-2 text-gray-600">Backend APIs, MVC, deployment on AWS EC2/Docker.</p>
-      </div>
-      <div class="p-6 rounded-2xl shadow bg-white">
-        <h3 class="font-semibold text-lg">Frontend</h3>
-        <p class="mt-2 text-gray-600">HTML, CSS, Tailwind for clean, responsive UIs.</p>
-      </div>
-      <div class="p-6 rounded-2xl shadow bg-white">
-        <h3 class="font-semibold text-lg">Projects</h3>
-        <p class="mt-2 text-gray-600">E&F League, Nearby Hoopsession, Todo App, and more.</p>
+    <!-- HIGHLIGHTS (fixed padding + spacing + contrast) -->
+    <section class="pb-24">
+      <h2 class="sr-only">Highlights</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl shadow bg-white border border-gray-100">
+          <h3 class="font-semibold text-lg text-gray-900">APIs & Data</h3>
+          <p class="mt-3 text-gray-700">REST, validation, JPA/Hibernate, MySQL.</p>
+        </div>
+        <div class="p-8 rounded-2xl shadow bg-white border border-gray-100">
+          <h3 class="font-semibold text-lg text-gray-900">Deployments</h3>
+          <p class="mt-3 text-gray-700">Dockerized Spring apps on AWS EC2.</p>
+        </div>
+        <div class="p-8 rounded-2xl shadow bg-white border border-gray-100">
+          <h3 class="font-semibold text-lg text-gray-900">Frontend</h3>
+          <p class="mt-3 text-gray-700">Responsive UIs with HTML/CSS/Tailwind.</p>
+        </div>
       </div>
     </section>
   </main>
+  
 
   <!-- Footer -->
   <footer class="mt-16 border-t bg-white">
