@@ -1,40 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdisalam Kadir | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="min-h-screen bg-gray-50 text-gray-900">
+  <!-- Navbar -->
+  <header class="bg-white/90 backdrop-blur sticky top-0 z-50 shadow-sm">
+    <nav class="container mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" class="text-xl font-bold">Abdisalam Kadir</a>
+      <ul id="nav" class="flex gap-6 text-sm">
+        <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-600">About</a></li>
+        <li><a href="projects.html" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="contact.html" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Brief introduction about yourself.</p>
+  <main class="container mx-auto px-4">
+    <!-- Hero -->
+    <section class="flex flex-col items-center text-center py-24">
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Hi, I’m Abdisalam</h1>
+      <p class="mt-4 text-lg md:text-xl text-gray-600">
+        Software Developer • Java • Spring Boot • Web Apps
+      </p>
+      <div class="mt-8 flex gap-3">
+        <a href="projects.html" class="px-5 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700">View Projects</a>
+        <a href="contact.html" class="px-5 py-3 rounded-lg border font-medium hover:bg-gray-100">Contact Me</a>
+      </div>
     </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Showcase your projects here.</p>
+  
+    <!-- Quick highlights -->
+    <section class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl shadow bg-white">
+        <h3 class="font-semibold text-lg">Java & Spring Boot</h3>
+        <p class="mt-2 text-gray-600">Backend APIs, MVC, deployment on AWS EC2/Docker.</p>
+      </div>
+      <div class="p-6 rounded-2xl shadow bg-white">
+        <h3 class="font-semibold text-lg">Frontend</h3>
+        <p class="mt-2 text-gray-600">HTML, CSS, Tailwind for clean, responsive UIs.</p>
+      </div>
+      <div class="p-6 rounded-2xl shadow bg-white">
+        <h3 class="font-semibold text-lg">Projects</h3>
+        <p class="mt-2 text-gray-600">E&F League, Nearby Hoopsession, Todo App, and more.</p>
+      </div>
     </section>
+  </main>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>How to reach you.</p>
-    </section>
+  <!-- Footer -->
+  <footer class="mt-16 border-t bg-white">
+    <div class="container mx-auto px-4 py-6 text-center text-sm text-gray-600">
+      © 2025 Abdisalam Kadir • Seattle, WA
+    </div>
+  </footer>
 
-    <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
+  <script>
+    // highlight active nav link
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('#nav a').forEach(a => {
+      if (a.getAttribute('href') === path) {
+        a.classList.add('text-blue-600', 'font-semibold');
+      }
+    });
+  </script>
 </body>
 </html>
